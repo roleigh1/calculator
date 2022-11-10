@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script type="text/javascript" src="script.js"></script>
+  <title>Frontend Mentor | Calculator app</title>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+  
+      
+
+    *{
+      box-sizing: border-box;
+      font-family:'League Spartan', san s-serif;
+    }
+    body{
+      background-color: hsl(221, 26%, 31%);
+    }
+    .theme1{
+     max-width: 375px;
+     margin: 0 auto;
+     border: px solid black;
+     border-radius: 5px;
+    }
+    #screen{
+      background-color: hsl(224, 36%, 15%);
+      border-radius: 5px;
+      height:150px;
+      position: relative;
+      top:30px;
+      right:75px;
+      margin-top: 10%;      
+      width: 525px;
+      margin-top:20%;
+      outline: none;
+    }
+    .btn{
+      background-color: hsl(30, 25%, 89%);
+      border-radius: 5px;
+      box-shadow: hsl(60, 10%, 19%);
+      height: 60px;
+      box-shadow: inset 0px -4px 0px #B4A597;
+      font-size: 2.5rem;
+      font-weight: 700;;
+      color:#444B5A;
+      margin-right: 5%;
+      position: relative;
+      bottom: 25%
+    } 
+    .btn:hover{
+      cursor:pointer; 
+      opacity: 0.7;
+    }
+    .btns {
+    
+      display: grid;
+      grid-template-columns: 100px 100px 100px 100px;
+      grid-gap: 25px;
+      height:470px;  
+      justify-content: center;
+      background-color: hsl(223, 31%, 20%);
+      border: none;
+      color:#444B5A;
+      border-radius: 5px;
+      padding: 3.2rem 2.5rem;
+      width: 525px;
+      margin: auto;
+      margin-top:20%;
+      margin-left: -20%;
+    }
+    .reset{
+      grid-row: 5/6;
+      grid-column: 1/3;
+      background-color: #637097;
+      width: 220px;
+      margin-left: 10px;
+      box-shadow: inset 0px -4px 0px #404E72;
+      color:#FFFFFF ;
+      font-size: 20px;
+      margin-left:-1%;
+    }
+    .end{
+      border: #D03F2F;
+    }
+    .equal{
+      margin-left: 125px;
+      background-color: #D03F2F;
+      grid-row:5/6;
+      grid-column: 3/2;
+      
+      width: 220px;
+      box-shadow:inset 0px -4px 0px #93261A;
+      color:#FFFFFF;
+    }
+    .del{
+      color:#FFFFFF;
+      background-color: #637097;
+      box-shadow: inset 0px -4px 0px #404E72;
+      border: none;
+      font-size: 1.5rem;
+    }
+    .calc{
+      color:#FFFFFF;
+      font-size: 2.5em;
+      position: relative;
+      top:5rem;
+      right:4.5rem;
+   
+    }
+  
+    #screen {
+      color: white;
+      text-align: center;
+      font-size: 25px;
+    }
+    #screen:hover{
+      cursor: pointer;
+    }
+    h1{
+      color:white; 
+      position: relative;
+      top:5rem;
+    }
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body class="theme1">
+<div class="main">  
+ 
+      <h1>Calc</h1>
+   
+  
+    <div class="screen">
+     <form name="calc">
+      <input type="text" name="text" readonly id="screen">
+    </form>
+    </div> 
+  <div class="btns">
+    <button  class="btn num" onclick="document.calc.text.value+='7'">7</button>
+    <button  class="btn num" onclick="document.calc.text.value+='8'">8</button>
+    <button  class="btn num" onclick="document.calc.text.value+='9'">9</button>
+    <button  class="btn del" onclick="del()">DEL</button>
+    <button  class="btn num" onclick="document.calc.text.value+='4'">4</button>
+    <button  class="btn num" onclick="document.calc.text.value+='5'">5</button>
+    <button  class="btn num" onclick="document.calc.text.value+='6'">6</button>
+    <button  class="btn plus" onclick="document.calc.text.value+='+'">+</button>
+    <button  class="btn num" onclick="document.calc.text.value+='1'">1</button>
+    <button  class="btn num" onclick="document.calc.text.value+='2'">2</button>
+    <button  class="btn num" onclick="document.calc.text.value+='3'">3</button>
+    <button  class="btn sub" onclick="document.calc.text.value+='-'">-</button>
+    <button  class="btn comma" onclick="document.calc.text.value+='.'">.</button>
+    <button  class="btn num" onclick="document.calc.text.value+='0'">0</button>
+    <button  class="btn divi" onclick="document.calc.text.value+='/'">/</button>
+    <button  class="btn times" onclick="document.calc.text.value+='*'">X</button>
+    <button  class="btn end reset" onclick="document.calc.text.value=''">RESET</button>
+    <button  class="btn  end  equal" onclick="document.calc.text.value= eval(calc.text.value)">=</button>
+  </div>
+</div>
+
+
+</body>
+</html>
